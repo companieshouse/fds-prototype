@@ -1,7 +1,13 @@
-const express = require('express')
-const router = express.Router()
+//
+// For guidance on how to create routes see:
+// https://prototype-kit.service.gov.uk/docs/create-routes
+//
 
-// Add your routes here - above the module.exports line
+const govukPrototypeKit = require('govuk-prototype-kit')
+const router = govukPrototypeKit.requests.setupRouter()
+
+// Add your routes here
+
 router.get('/', function (req, res) {
   req.session.destroy()
   res.render('index', {
@@ -74,4 +80,3 @@ router.post('/auth-screen', function (req, res) {
   }
 })
 
-module.exports = router
